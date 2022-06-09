@@ -1,0 +1,54 @@
+@import './main.scss';
+
+.footer {
+    padding: 60px 0;
+
+    .footer__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+
+        .footer-socials {
+            display: flex;
+            gap: 40px;
+
+            .footer-social__link {
+                position: relative;
+                text-decoration: none;
+                color: $dark-color;
+                padding: 0 0 10px 0;
+                transition: color .3s ease;
+
+                &::before,
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    left: auto;
+                    width: 0;
+                    height: 3px;
+                    z-index: 3;
+                }
+
+                &::before {
+                    background-color: $light-color;
+                    transition: all .25s cubic-bezier(.694, .048, .335, 1) .15s;
+                }
+
+                &::after {
+                    background-color: $dark-color;
+                    transition: all .25s cubic-bezier(.694, .048, .335, 1);
+                }
+
+                &:hover::before,
+                &:hover::after {
+                    width: 100%;
+                    left: 0;
+                }
+            }
+        }
+    }
+}

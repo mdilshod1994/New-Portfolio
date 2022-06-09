@@ -1,0 +1,105 @@
+@import './main.scss';
+
+.sidebar {
+    position: fixed;
+    width: 80px;
+    height: 100vh;
+    z-index: 9;
+
+    .sidebar-wrapper {
+        height: 100%;
+        padding: 20px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        background: rgba($color: #132123, $alpha: 0.7);
+        transition: all 0.5s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        transform: translateX(-80%);
+
+
+
+        .sidebar-name {
+            width: max-content;
+            position: absolute;
+            top: 110px;
+            transform: rotate(-90deg);
+            left: auto;
+
+            .sidebar-name__link {
+                text-decoration: none;
+                color: $text-color;
+                font-weight: 400;
+                font-size: 22px;
+            }
+        }
+    }
+
+    &.active .sidebar-wrapper,
+    &:hover .sidebar-wrapper {
+        transform: translateX(0);
+    }
+
+    .sidebar-btn {
+        position: absolute;
+        top: 45%;
+        left: auto;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        cursor: pointer;
+
+        .sidebar-btn__line {
+            width: 40px;
+            height: 2px;
+            background: $text-color;
+            transition: all 0.4s ease;
+        }
+
+        .sidebar-btn__line:nth-child(1),
+        .sidebar-btn__line:nth-child(3) {
+            transition-delay: 0.4s;
+        }
+
+        .sidebar-btn__line:nth-child(2) {
+            transition-delay: 0.8s;
+        }
+
+        &.active .sidebar-btn__line:nth-child(1) {
+            transform: rotate(45deg) translate(22%, 8px);
+        }
+
+        &.active .sidebar-btn__line:nth-child(2) {
+            transform: translateX(10px);
+            opacity: 0;
+            transition-delay: 0.1s;
+        }
+
+        &.active .sidebar-btn__line:nth-child(3) {
+            transform: rotate(-45deg) translate(22%, -8px)
+        }
+    }
+
+    .sidebar-social__list {
+        position: absolute;
+        left: auto;
+        bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .sidebar-social__item {
+            list-style: none;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: translateX(7px);
+            }
+
+        }
+    }
+}

@@ -1,0 +1,41 @@
+ @import '../main.scss';
+
+ .banner {
+     height: calc(80vh - 99px);
+     display: flex;
+     align-items: center;
+     justify-content: center;
+
+     .banner-wrapper {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+
+         .slide__btns {
+             position: absolute;
+         }
+
+         .banner__content {
+             .banner__title {
+                 font-size: 100px;
+                 color: $light-color;
+                 //  background-clip: ;
+             }
+
+             .banner__subtitle {
+                 font-size: 28px;
+                 color: $text-color;
+                 margin: 0 0 20px;
+             }
+
+             .banner__btn {
+                 color: $light-color;
+
+                 &:hover {
+                     border: 1px solid $dark-color;
+                 }
+             }
+         }
+
+     }
+ }

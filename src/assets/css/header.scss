@@ -1,0 +1,20 @@
+@import './main.scss';
+
+.header {
+    width: calc(100% - 80px);
+    padding: 20px;
+    margin: 0 0 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header__btn {
+        border: 1px solid $dark-color;
+        color: $dark-color;
+
+        &:hover {
+            color: $light-color;
+        }
+    }
+
+}

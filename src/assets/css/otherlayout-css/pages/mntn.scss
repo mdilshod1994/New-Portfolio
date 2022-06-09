@@ -1,0 +1,119 @@
+$text-color: #fff;
+$gold-color: rgba(251, 215, 132, 1);
+
+.mntn-container {
+    max-width: 1460px;
+    margin: 0 auto;
+}
+
+.mntn {
+    color: $text-color;
+
+    .header {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow: hidden;
+
+        .header__gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(330.24deg, rgba(11, 29, 38, 0) 31.06%, #07151b 108.93%);
+            z-index: 4;
+        }
+
+        .header__gradient_bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #07151b 108.93%);
+            z-index: 4;
+        }
+
+        .header__img {
+            position: absolute;
+        }
+
+        .sky {
+            top: 0;
+            z-index: 1;
+        }
+
+        .mountain {
+            bottom: -800px;
+            z-index: 2;
+        }
+
+        .person {
+            bottom: -450px;
+            z-index: 3;
+        }
+
+        .nav {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            padding: 0 80px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 5;
+
+            .logo {
+
+                .logo__icon path {
+                    transition: 0.2s ease-in-out;
+                }
+
+                &:hover .logo__icon path {
+                    fill: $gold-color;
+                }
+            }
+
+            .nav__links {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 50px;
+
+                .nav__item {
+                    position: relative;
+                    list-style: none;
+                    transition: 0.2s ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    padding-bottom: 10px;
+
+                    ::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: $gold-color;
+                    }
+
+                    .nav__link {
+                        text-decoration: none;
+                        color: inherit;
+                        font-size: 20px;
+                        transition: 0.2s ease-in-out;
+
+                        &:hover {
+                            color: $gold-color;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
