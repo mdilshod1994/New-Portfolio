@@ -16,10 +16,10 @@
                     <p class="works__descr">
                         {{ work.descr }}
                     </p>
-                    <router-link :to="work.url" class="works-link">
+                    <a :href="work.url" class="works-link main-link">
                         Case Study
-                        <img class="works-link__arrow" :src="arrowIcon" alt="">
-                    </router-link>
+                        <img class="works-link__arrow main-link__arrow" :src="arrowIcon" alt="">
+                    </a>
                 </div>
             </div>
         </div>

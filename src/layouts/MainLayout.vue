@@ -19,11 +19,15 @@ export default {
             isActive: false
         }
     },
+    computed: {
+
+    },
     methods: {
         popupMenu() {
             this.isActive = !this.isActive
         }
     },
+
 }
 </script>
 <style lang="scss">

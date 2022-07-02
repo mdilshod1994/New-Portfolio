@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar" :class="{ active: isActive || ifNotScrolled }">
+  <div class="sidebar" :class="{ active: isActive || ifNotScrolled }" >
     <div class="sidebar-wrapper">
       <div class="sidebar-name">
         <router-link to="" class="sidebar-name__link">

@@ -7,7 +7,7 @@
             EXPERIMENTS
         </h1>
         <div class="experements__list">
-            <router-link class="experements__item" v-for="experement, index in experements" :key="experement.id" to="">
+            <div class="experements__item" v-for="experement, index in experements" :key="experement.id">
                 <span class="experements__number"> 0{{ index + 1 }} </span>
                 <h1 class="experements__title t-center">
                     {{ experement.title }}
@@ -16,10 +16,11 @@
                     {{ experement.subtitle }}
                 </p>
                 <span class="experements__text">(no plugins & libraries)</span>
-                <button class="experements__btn">
-                    To see
-                </button>
-            </router-link>
+                <router-link :to="experement.url" class="experements-link main-link">
+                    See more
+                    <img class="experements-link__arrow main-link__arrow" :src="arrowIcon" alt="">
+                </router-link>
+            </div>
         </div>
 
     </div>
@@ -28,6 +29,7 @@
 export default {
     data() {
         return {
+            arrowIcon: require('../assets/images/main-section/arr.svg'),
             experements: [
                 {
                     id: 1,
@@ -51,7 +53,7 @@ export default {
                     id: 4,
                     title: 'Slider',
                     subtitle: 'Have fun to see Sliders',
-                    url: ''
+                    url: '/sliders'
                 },
                 {
                     id: 5,

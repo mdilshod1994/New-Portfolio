@@ -18,10 +18,10 @@ export default {
     layout() {
       return (this.$route.meta.layout || 'others') + '-layout'
     }
-  }
+  },
+
 }
 </script>
 
 <style lang="scss">
-
 </style>

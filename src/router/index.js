@@ -11,7 +11,13 @@ const routes = [
     path: '/mntn',
     name: 'mntn',
     meta: { layout: 'others' },
-    component: () => import(/* webpackChunkName: "about" */ '../views/MNTN.vue')
+    component: () => import('../views/MNTN.vue')
+  },
+  {
+    path: '/sliders',
+    name: 'sliders',
+    meta: { layout: 'others' },
+    component: () => import('../components/expirements/Slider.vue')
   }
 ]
 
