@@ -1,7 +1,7 @@
 <template>
     <div class="main-layout">
         <SideBarVue @popupMenu="popupMenu" :isActive="isActive" />
-        <PopupMenu v-if="isActive" :isActive="isActive" />
+        <PopupMenu :class="{ active: isActive }" :isActive="isActive" />
         <router-view />
     </div>
 </template>

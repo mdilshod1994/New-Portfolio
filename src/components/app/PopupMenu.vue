@@ -1,30 +1,10 @@
 <template>
     <div class="popup-menu">
-        <div class="popup-menu__body" :class="{ active: isActive }">
+        <div class="popup-menu__body">
+            <span v-for="q, i in 8" :key="i" :style="`--i:${i}`" :class="{ active: isActive }"
+                class="popup-menu__animationbg"></span>
             <div class="popup-menu__content">
-                <div class="expirence">
-                    <h1 class="expirence__title">
-                        My expirence
-                    </h1>
-                    <ul class="expirence-list">
-                        <li class="expirence-item" v-for="exp, index in expirence" :key="exp.id"
-                            :style="`--i:${index + 1}`">
-                            <img :src="exp.img" class="expirence-item__img" alt="">
-                            <div class="expirence-item__content">
-                                <h1 class="expirence-item__title">
-                                    {{ exp.title }}
-                                </h1>
-                                <p class="expirence-item__descr">
-                                    {{ exp.descr }}
-                                </p>
-                                <a :href="exp.link" class="expirence-item__link main-link" target="_blank">
-                                    Case Study
-                                    <img class="expirence-item__arrow main-link__arrow" :src="arrowIcon" alt="">
-                                </a>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </div>
     </div>
