@@ -4,7 +4,42 @@
             <span v-for="q, i in 8" :key="i" :style="`--i:${i}`" :class="{ active: isActive }"
                 class="popup-menu__animationbg"></span>
             <div class="popup-menu__content">
-
+                <ul class="popup-menu__list">
+                    <li class="popup-menu__item" v-for="item, index in links" :key="index">
+                        <a :href="item.link" class="popup-menu__link">
+                            {{ item.title }}
+                        </a>
+                    </li>
+                </ul>
+                <div class="get-in-touch">
+                    <h1 class="get-in-touch__title">
+                        Get In Touch
+                    </h1>
+                    <form class="get-in-touch__form">
+                        <div class="input-wrapper">
+                            <div class="input-container">
+                                <input type="text" required id="username" @blur="blurMethod($event)"
+                                    class="get-in-touch__input" autocomplete="off">
+                                <label for="username" class="get-in-touch__label">Your Name</label>
+                            </div>
+                            <div class="input-container">
+                                <input type="email" required id="useremail" @blur="blurMethod($event)"
+                                    class="get-in-touch__input">
+                                <label for="useremail" class="get-in-touch__label">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" required id="subject" @blur="blurMethod($event)" class="get-in-touch__input">
+                            <label for="subject" class="get-in-touch__label">Your Subject</label>
+                        </div>
+                        <div class="input-container input-container_textarea">
+                            <textarea name="" id="message" required class="get-in-touch__textarea" @blur="blurMethod($event)"
+                                rows="5" />
+                            <label for="message" class="get-in-touch__label">Your Message</label>
+                        </div>
+                        <button class="get-in-touch__btn"> Send Message </button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -15,66 +50,39 @@ export default {
     data() {
         return {
             arrowIcon: require('../../assets/images/main-section/arr.svg'),
-            expirence: [
+            links: [
                 {
                     id: 1,
-                    title: 'Mulk',
-                    descr: 'Building Platform',
-                    link: 'http://demo.mulk.tj/',
-                    img: require('../../assets/images/expiriance/2.png')
+                    title: 'About',
+                    link: '/about',
                 },
                 {
                     id: 2,
-                    title: 'Admin dashboard (Mulk)',
-                    descr: 'Admin dashboard for CRUD buildings',
-                    link: 'http://admin.mulk.tj/',
-                    img: require('../../assets/images/expiriance/3.png')
+                    title: 'Resume',
+                    link: '/resume',
                 },
                 {
                     id: 3,
-                    title: 'ONEBOOK',
-                    descr: 'Landing Page',
-                    link: 'https://onebook.tj/',
-                    img: require('../../assets/images/expiriance/1.png')
+                    title: 'Portfolio',
+                    link: '/portfolio',
                 },
                 {
                     id: 4,
-                    title: 'Maskan Develop',
-                    descr: 'Landing Page',
-                    link: 'http://maskan.tw1.ru/',
-                    img: require('../../assets/images/expiriance/5.png')
-                },
-                {
-                    id: 5,
-                    title: 'Maskantower',
-                    descr: 'Landing Page',
-                    link: 'https://maskantower.tj/',
-                    img: require('../../assets/images/expiriance/4.png')
-                },
-                {
-                    id: 6,
-                    title: 'F1C',
-                    descr: 'Finance Platform',
-                    link: 'https://f1c.ru/',
-                    img: require('../../assets/images/expiriance/6.png')
-                },
-                {
-                    id: 7,
-                    title: 'Zaynab Textile',
-                    descr: 'Online store',
-                    link: 'https://zaynab.tj/',
-                    img: require('../../assets/images/expiriance/7.png')
-                },
-                {
-                    id: 8,
-                    title: 'Consulting Group',
-                    descr: 'Landing Page',
-                    link: 'http://centralasiaconsult.com/',
-                    img: require('../../assets/images/expiriance/8.png')
+                    title: 'Contact',
+                    link: '/contact',
                 },
             ]
         }
     },
+    methods: {
+        blurMethod(e) {
+            if (e.target.value !== '') {
+                e.target.nextElementSibling.classList.add('filled')
+            } else {
+                e.target.nextElementSibling.classList.remove('filled')
+            }
+        }
+    }
 }
 </script>
 <style  lang="scss">
